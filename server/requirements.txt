@@ -1,0 +1,22 @@
+-install python 3.5.2
+-put serviceAccountCredentials.json in same folder as python server
+-run (maybe with sudo):
+  pip install --upgrade pip
+  pip install pyrebase
+  pip install pandas
+  pip3 install --upgrade tensorflow
+  pip install scikit-learn
+
+-numpy
+  Install from whele here: http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+    numpy‑1.11.3+mkl‑cp35‑cp35m‑win_amd64.whl
+
+-scipy
+  https://www.scipy.org/install.html
+
+  Windows
+    get whl file for scipy from http://www.lfd.uci.edu/~gohlke/pythonlibs/
+      scipy‑0.19.0‑cp35‑cp35m‑win_amd64.whl
+
+
+pip install keras

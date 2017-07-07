@@ -10,5 +10,13 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <script>
+    window.googleMapsLoaded = false;
+    window.onGoogleMapsLoaded = function() {
+        window.googleMapsLoaded = true;
+    };
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq9ry_g8OM-d8tyYO2UNygWJSSLTD9PAo&callback=onGoogleMapsLoaded"></script>
 </body>
 </html>
