@@ -52,8 +52,8 @@ def stream_handler(message):
     on_place_added()
 
 def addPlace(fbPlace):
-  if fbPlace['isMatch'] == False and randint(0, 4) != 0:
-    return
+  # if fbPlace['isMatch'] == False and randint(0, 4) != 0:
+  #   return
 
   places.append([
     fbPlace['lat'],
@@ -65,6 +65,9 @@ def addPlace(fbPlace):
 def on_place_added():
   random.shuffle(places)
   df = pd.DataFrame(data=places, columns=columns)
+
+  df.to_csv('places.csv', index=False)
+
   df = min_max_normalize(df)
 
   # plt.scatter(df['lat'], df['lng'], c=df['isMatch'])
