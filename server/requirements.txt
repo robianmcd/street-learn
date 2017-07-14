@@ -20,3 +20,9 @@
 
 
 pip install keras
+
+
+-jupyter map widget
+  pip install ipyleaflet
+  jupyter nbextension enable --py --sys-prefix widgetsnbextension
+  jupyter nbextension enable --py --sys-prefix ipyleaflet
