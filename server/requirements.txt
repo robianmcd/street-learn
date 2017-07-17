@@ -6,6 +6,7 @@
   pip install pandas
   pip3 install --upgrade tensorflow
   pip install scikit-learn
+  pip install seaborn
 
 -numpy
   Install from whele here: http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
