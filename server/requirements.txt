@@ -27,3 +27,6 @@ pip install keras
   pip install ipyleaflet
   jupyter nbextension enable --py --sys-prefix widgetsnbextension
   jupyter nbextension enable --py --sys-prefix ipyleaflet
+
+ run jupyter with
+  jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000
