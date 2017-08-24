@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 
 /server/serviceAccountCredentials.json
+
+/notebook/.ipynb_checkpoints
