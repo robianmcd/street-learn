@@ -7,3 +7,7 @@
 .notebook_app div#header {
   display: none !important;
 }
+
+.rendered_html img {
+    margin-left: 0;
+}
