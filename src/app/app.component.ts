@@ -71,7 +71,7 @@ export class AppComponent {
   places: FirebaseListObservable<Place[]>;
   curPanorama: StreetViewPanorama;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase) {
     this.places = db.list('/places');
 
     if (window['googleMapsLoaded']) {
@@ -80,6 +80,8 @@ export class AppComponent {
     } else {
       window['onGoogleMapsLoaded'] = () => this.onGoogleMapsLoaded();
     }
+
+    this.getStreet();
 
   }
 
@@ -131,5 +133,45 @@ export class AppComponent {
       )
     });
 
+  }
+
+  numStreets = 0;
+  streets = {};
+  getStreet() {
+    let geocoder = new google.maps.Geocoder();
+
+    const latRange = this.maxLat - this.minLat;
+    const lngRange = this.maxLng - this.minLng;
+    const lat = this.minLat + (Math.random() * latRange);
+    const lng = this.minLng + (Math.random() * lngRange);
+
+    geocoder.geocode({'location': {lat, lng}}, (results, status) => {
+      console.log(status);
+      if(results && results[0]) {
+        for (let i = 0; i < results[0].address_components.length; i++) {
+          let comp = results[0].address_components[i];
+
+          let resultLat = results[0].geometry.location.lat();
+          let resultLng = results[0].geometry.location.lng();
+
+          if(comp.types.includes('route')) {
+              //console.log(comp.short_name);
+              this.streets[comp.short_name] = this.streets[comp.short_name] || 0;
+              this.streets[comp.short_name]++;
+              this.db.list('/multiClassPlaces').push({lat: resultLat, lng: resultLng, streetName: comp.short_name});
+              break;
+          }
+        }
+
+      }
+
+      this.numStreets++;
+
+      if(this.numStreets < 1000) {
+        setTimeout(() => this.getStreet(), 12000 + Math.random() * 12000);
+      } else {
+        console.log(this.streets);
+      }
+    });
   }
 }

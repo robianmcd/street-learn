@@ -1,5 +1,5 @@
-<div id="street-view"></div>
-<div class="button-container">
-  <button class="miss-btn" (click)="onMiss()">Not on King</button>
-  <button class="match-btn" (click)="onMatch()">On King</button>
+<div id="street-view" [hidden]="true"></div>
+<div class="button-container" [hidden]="true">
+  <button class="miss-btn" (click)="onMiss()" [hidden]="true">Not on King</button>
+  <button class="match-btn" (click)="onMatch()" [hidden]="true">On King</button>
 </div>
