@@ -81,7 +81,7 @@ export class AppComponent {
       window['onGoogleMapsLoaded'] = () => this.onGoogleMapsLoaded();
     }
 
-    this.getStreet();
+    //this.getStreet();
 
   }
 
