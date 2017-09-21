@@ -16,6 +16,10 @@ div.input {
 	flex-direction: column;
 }
 
+.div.output_area {
+	flex-direction: column;
+}
+
 .prompt {
     text-align: left;
 }
