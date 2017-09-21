@@ -23,3 +23,7 @@ div.output_area {
 .prompt {
     text-align: left;
 }
+
+div.output_subarea {
+      max-width: 100%;
+}
