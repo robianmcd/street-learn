@@ -11,3 +11,11 @@
 .rendered_html img {
     margin-left: 0;
 }
+
+div.input {
+	flex-direction: column;
+}
+
+.prompt {
+    text-align: left;
+}
