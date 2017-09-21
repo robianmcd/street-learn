@@ -37,3 +37,7 @@ div.out_prompt_overlay:hover {
   box-shadow: none;
   display: block;
 }
+
+.widget-area .prompt {
+  display: none;
+}
