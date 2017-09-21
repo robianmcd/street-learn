@@ -27,3 +27,7 @@ div.output_area {
 div.output_subarea {
       max-width: 100%;
 }
+
+div.text_cell > div.prompt {
+    display: none;
+}
