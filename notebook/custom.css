@@ -9,25 +9,31 @@
 }
 
 .rendered_html img {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 div.input {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 div.output_area {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 .prompt {
-    text-align: left;
+  text-align: left;
 }
 
 div.output_subarea {
-      max-width: 100%;
+  max-width: 100%;
 }
 
 div.text_cell > div.prompt {
-    display: none;
+  display: none;
+}
+
+div.out_prompt_overlay:hover {
+  background: none;
+  box-shadow: none;
+  display: block;
 }
